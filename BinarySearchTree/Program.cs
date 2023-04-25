@@ -25,18 +25,42 @@ namespace BinarySearchTree
 		// 접근			탐색			삽입			삭제
 		// O(log n)		O(log n)	O(log n)	O(log n)
 
-		// <이진탐색트리의 주의점>
+		// <이진탐색트리의 한계점과 극복방법>
 		// 이진탐색트리의 노드들이 한쪽 자식으로만 추가되는 불균형 발생 가능
-		// 이 경우 탐색영역이 절반으로 줄여지지 않기 때문에 시간복잡도 증가
+		// 이 경우 탐색영역이 줄여지지 않기 때문에 시간복잡도 증가(평균은 logN이지만 불균형의 경우 N까지 증가)
 		// 이러한 현상을 막기 위해 자가균형기능을 추가한 트리의 사용이 일반적
 		// 대표적인 방식으로 Red-Black Tree, AVL Tree 등이 있음
-		//
+		// red-black tree와 avl tree는 둘다 불균형하게 노드가 추가되고있으면 자가균형기능으로 인해 균형이 맞춰짐.
+
 
 		/*<트리기반의 자료구조의 순회>
-		*1, 전위순회 : 노드, 왼쪽, 오른쪽
-		*2, 중위순회 : 왼쪽, 노드, 오른쪽    <- 이진탐색트리의 순회
-		*3, 후위순회 : 왼쪽, 오른쪽, 노드
-		*/
+		*1, 전위순회 : 노드, 왼쪽, 오른쪽                                                    노드를 먼저 보고 그다음 왼쪽자식노드를 확인 그리고 다음으로 오른쪽자식노드를 확인하는 방법
+		*2, 중위순회 : 왼쪽, 노드, 오른쪽    <- 이진탐색트리의 순회            노드를 먼저 보기전에 왼쪽자식노드를 확인 그다음 노드를 확인 후 오른쪽자식노드를 확인함
+		*3, 후위순회 : 왼쪽, 오른쪽, 노드                                                   노드를 보기 전에 왼쪽자식노드를 확인 그다음 오른쪽자식노드를 확인 후 마지막에 노드확인을 함
+		*기본적으로 노드를 확인하는 순서로 이름을 정하고 왼쪽자식노드를 먼저 확인함. 
+		public void Preorder(TreeNode node) 전위순회
+		{
+			if (node == null) return;
+			Console.Write(node.val + " ");
+			Preorder(node.left);
+			Preorder(node.right);
+		}
+
+		public void Inorder(TreeNode node) 중위순회
+		{
+			if (node == null) return;
+			Inorder(node.left);
+			Console.Write(node.val + " ");
+			Inorder(node.right);
+		}
+
+		public void Postorder(TreeNode node) 후위순회
+		{
+			if (node == null) return;
+			Postorder(node.left);
+			Postorder(node.right);
+			Console.Write(node.val + " ");
+		}*/
 
 		static void BinarySearchTree()
 		{
@@ -114,3 +138,4 @@ namespace BinarySearchTree
 		}
 	}
 }
+//
