@@ -171,13 +171,11 @@ namespace BinarySearchTree
 				this.left = left;
 				this.right = right;
 			}
-			/*public bool isRootNode { get { return parent == null; } }*/
 			public bool isLeftChild { get { return left != null && parent.left == this; } }          //노드가 왼쪽자식노드인지 판별하는 함수
 			public bool isRightChild { get { return right != null && parent.right == this; } }     //노드가 오른쪽자식노드인지 판별하는 함수
 			public bool hasNoChild { get { return left == null && right == null; } }                   //노드가 자식이 없는지 판별하는 함수
 			public bool hasLeftChild { get { return left != null && right == null; } }                 //노드가 왼쪽자식이 없는지 판별하는 함수
 			public bool hasRightChild { get { return left == null && right != null; } }                //노드가 오른쪽자식이 없는지 판별하는 함수
-			/*public bool HasBothChild { get { return left != null && right != null; } }*/
 		}
 	}
 }
