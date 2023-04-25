@@ -19,7 +19,7 @@ namespace BinarySearchTree
 		{
 			Node newNode = new Node(item, null, null, null);
 
-			if (root == null)
+			if (root == null)                                        //트리가 비어있다면
 			{
 				root = newNode;
 				return;
